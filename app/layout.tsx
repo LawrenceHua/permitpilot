@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "ReviewRite AI — Paste Any Review, Get a Professional Response",
-  description: "AI-powered review response tool for independent restaurants. Paste any Google or Yelp review and get a polished owner response in one click.",
+  title: "TipTrail AI — Automated Tip Pooling & CA DLSE Compliance for Restaurants",
+  description: "Calculate fair tip splits, track weekly tips per employee, and generate California DLSE-compliant PDF records in one click. $19/mo.",
 };
 
 export default function RootLayout({
