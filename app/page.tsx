@@ -1,325 +1,217 @@
-"use client";
-
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Calculator, CheckCircle, ShieldCheck, ArrowRight, DollarSign, FileText, Zap } from "lucide-react";
 import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
-      {/* Header */}
-      <header className="bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <Calculator className="h-8 w-8 text-amber-500" />
-            <span className="text-xl font-bold text-slate-900">TipTrail AI</span>
-          </div>
-          <nav className="flex gap-4">
-            <a href="#features" className="inline-flex items-center justify-center rounded-lg border border-transparent text-sm font-medium px-2.5 py-2 h-8 gap-1.5 hover:bg-slate-100 text-slate-700">Features</a>
-            <a href="#pricing" className="inline-flex items-center justify-center rounded-lg border border-transparent text-sm font-medium px-2.5 py-2 h-8 gap-1.5 hover:bg-slate-100 text-slate-700">Pricing</a>
-            <Link href="/calculate"><Button variant="outline">Dashboard</Button></Link>
-            <Link href="/calculate"><Button>Try Free</Button></Link>
-          </nav>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      {/* Hero */}
+      <section className="px-6 py-24 max-w-5xl mx-auto text-center">
+        <div className="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 text-blue-300 text-sm px-4 py-2 rounded-full mb-8">
+          <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></span>
+          Spring permit season is here — HVAC, decks, electrical upgrades
         </div>
-      </header>
-
-      {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="text-center mb-12">
-          <Badge className="bg-amber-100 text-amber-800 mb-4">Built for Independent Restaurants</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-            Stop Excel. Stop Guessing.
-            <br />
-            <span className="text-amber-600">Calculate Fair Tips</span>
-            <br />
-            in Seconds
-          </h1>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            TipTrail AI calculates tip pool allocations per employee, checks California DLSE compliance, and generates downloadable PDF records — all in one click.
-          </p>
-          <div className="flex gap-4 justify-center mt-8">
-            <Link href="/calculate"><Button size="lg" className="bg-amber-500 hover:bg-amber-600"><Calculator className="mr-2 h-4 w-4" />Try Free — No Sign Up</Button></Link>
-            <a href="#pricing" className="inline-flex items-center justify-center rounded-lg border border-border bg-background hover:bg-muted text-sm font-medium whitespace-nowrap transition-all h-9 gap-1.5 px-2.5">View Pricing<ArrowRight className="ml-2 h-4 w-4" /></a>
-          </div>
+        <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
+          Know What Permits You Need
+          <br />
+          <span className="text-blue-400">Before You Start the Job</span>
+        </h1>
+        <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+          PermitPilot AI tells independent plumbers, electricians, HVAC pros, and contractors exactly which permits they need — based on their trade, location, and job type.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link href="/lookup/" className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl text-lg font-semibold transition">
+            Start Permit Lookup — Free
+          </Link>
+          <Link href="#how-it-works" className="border border-slate-500 hover:border-slate-300 text-slate-300 hover:text-white px-8 py-4 rounded-xl text-lg font-medium transition">
+            See How It Works
+          </Link>
         </div>
+      </section>
 
-        {/* Feature Highlights */}
-        <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-12">
-          <Card>
-            <CardHeader>
-              <DollarSign className="h-10 w-10 text-amber-500 mb-2" />
-              <CardTitle>Fair Tip Splits</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-slate-600 text-sm">
-                Enter total tips and employee hours. TipTrail divides everything proportionally — servers, bartenders, bussers, and back-of-house.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <ShieldCheck className="h-10 w-10 text-green-500 mb-2" />
-              <CardTitle>CA DLSE Compliance</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-slate-600 text-sm">
-                Automatic compliance checker validates your tip pool against California Labor Code §351. Know before you file.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <FileText className="h-10 w-10 text-blue-500 mb-2" />
-              <CardTitle>PDF Export in 1 Click</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-slate-600 text-sm">
-                Generate a DLSE-compliant weekly tip report PDF with employee breakdown. Ready to file or hand to your accountant.
-              </p>
-            </CardContent>
-          </Card>
+      {/* Problem */}
+      <section className="bg-slate-800/50 py-16 px-6">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">The Permit Problem Is Real</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { icon: "⏱️", title: "Weeks of Research", desc: "Contractors spend 2–4 weeks learning permit requirements for each new job type. That's time not spent billing." },
+              { icon: "💸", title: "$500–$5,000 Fines", desc: "Working without a required permit = fines, forced tear-outs, and insurance claim denials. One fine = 10x the cost of PermitPilot." },
+              { icon: "📋", title: "Conflicting Information", desc: "Google yields 5 different answers for the same permit question. PermitPilot gives you one authoritative answer." },
+            ].map((item, i) => (
+              <div key={i} className="bg-slate-800 border border-slate-700 rounded-xl p-6">
+                <div className="text-3xl mb-3">{item.icon}</div>
+                <h3 className="text-white font-semibold text-lg mb-2">{item.title}</h3>
+                <p className="text-slate-400 text-sm">{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* How It Works */}
-      <section className="bg-white py-16" id="features">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900">How It Works</h2>
-            <p className="text-slate-600 mt-2">Three steps from chaos to compliant</p>
+      <section id="how-it-works" className="py-20 px-6 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">3 Steps to Permit Clarity</h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { step: "1", title: "Enter Job Details", desc: "Select your trade (HVAC, Plumbing, Electrical, General Contracting), job type (new install, repair, replacement), and ZIP code." },
+              { step: "2", title: "Get Permit List", desc: "PermitPilot returns a ranked list of required permits — federal, state, county, and city — with fees, processing times, and urgency flags." },
+              { step: "3", title: "Download & Start", desc: "Export a one-page PDF checklist with permit names, application URLs, fees, and deadlines. You're ready to apply." },
+            ].map((item, i) => (
+              <div key={i} className="text-center">
+                <div className="w-14 h-14 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">{item.step}</div>
+                <h3 className="text-slate-900 font-semibold text-lg mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm">{item.desc}</p>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <div className="h-12 w-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-xl font-bold text-amber-700">1</span>
+      {/* Features */}
+      <section className="py-20 px-6 bg-slate-50">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">Everything You Need to Stay Compliant</h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              { title: "Permit Requirements Lookup", desc: "Select your trade + job type + ZIP → get a ranked list of required permits with issuing authority and validity period." },
+              { title: "Timeline & Urgency Engine", desc: "Processing times (e.g., '5–10 business days'), fee ranges, and seasonal urgency flags. Apply before the deadline." },
+              { title: "PDF Checklist Export", desc: "Download a one-page permit checklist per job with application URLs, fees, and deadlines. No more missed permits." },
+              { title: "Job History", desc: "All your past permit lookups saved locally. Re-run for recurring job types without re-entering details." },
+            ].map((item, i) => (
+              <div key={i} className="bg-white border border-slate-200 rounded-xl p-6 flex gap-4">
+                <div className="w-10 h-10 bg-blue-100 text-blue-700 rounded-lg flex items-center justify-center text-lg shrink-0">✓</div>
+                <div>
+                  <h3 className="text-slate-900 font-semibold mb-1">{item.title}</h3>
+                  <p className="text-slate-600 text-sm">{item.desc}</p>
+                </div>
               </div>
-              <h3 className="font-semibold text-lg mb-2">Enter Weekly Tips</h3>
-              <p className="text-slate-600 text-sm">Input total tips collected (cash + digital) and each employee's hours worked for the week.</p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section id="pricing" className="py-20 px-6 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-slate-900 text-center mb-4">Simple, Transparent Pricing</h2>
+          <p className="text-slate-600 text-center mb-12">One avoided permit fine pays for months of PermitPilot.</p>
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            {/* Free */}
+            <div className="border border-slate-200 rounded-xl p-6">
+              <h3 className="text-slate-900 font-semibold text-lg mb-1">Free</h3>
+              <div className="text-4xl font-bold text-slate-900 mb-4">$0<span className="text-base font-normal text-slate-500">/mo</span></div>
+              <ul className="space-y-2 text-sm text-slate-600 mb-6">
+                <li>✓ 2 permit lookups/month</li>
+                <li>✓ Basic requirements list</li>
+                <li>✓ Urgency flags</li>
+                <li>✗ No PDF export</li>
+              </ul>
+              <Link href="/lookup/" className="block text-center border border-slate-300 hover:border-slate-400 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                Get Started
+              </Link>
             </div>
-            <div className="text-center">
-              <div className="h-12 w-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-xl font-bold text-amber-700">2</span>
-              </div>
-              <h3 className="font-semibold text-lg mb-2">Get Fair Allocations</h3>
-              <p className="text-slate-600 text-sm">TipTrail calculates $ per hour for every employee with your custom tip-out ratios.</p>
+            {/* Starter */}
+            <div className="border-2 border-blue-500 rounded-xl p-6 bg-blue-50 relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">MOST POPULAR</div>
+              <h3 className="text-slate-900 font-semibold text-lg mb-1">Starter</h3>
+              <div className="text-4xl font-bold text-slate-900 mb-4">$19<span className="text-base font-normal text-slate-500">/mo</span></div>
+              <ul className="space-y-2 text-sm text-slate-600 mb-6">
+                <li>✓ 20 permit lookups/month</li>
+                <li>✓ Full permit list</li>
+                <li>✓ PDF checklist export</li>
+                <li>✓ 1 trade type</li>
+                <li>✓ Urgency + timeline data</li>
+              </ul>
+              <Link href="/checkout/?plan=starter" className="block text-center bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium transition">
+                Get Starter — $19/mo
+              </Link>
             </div>
-            <div className="text-center">
-              <div className="h-12 w-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-xl font-bold text-amber-700">3</span>
-              </div>
-              <h3 className="font-semibold text-lg mb-2">Download & Stay Compliant</h3>
-              <p className="text-slate-600 text-sm">Export a PDF report and run the CA DLSE compliance checker — all in one click.</p>
+            {/* Pro */}
+            <div className="border border-slate-200 rounded-xl p-6">
+              <h3 className="text-slate-900 font-semibold text-lg mb-1">Pro</h3>
+              <div className="text-4xl font-bold text-slate-900 mb-4">$49<span className="text-base font-normal text-slate-500">/mo</span></div>
+              <ul className="space-y-2 text-sm text-slate-600 mb-6">
+                <li>✓ Unlimited permit lookups</li>
+                <li>✓ All trade types</li>
+                <li>✓ PDF export with app URLs</li>
+                <li>✓ Priority processing info</li>
+                <li>✓ Seasonal deadline alerts</li>
+              </ul>
+              <Link href="/checkout/?plan=pro" className="block text-center border border-slate-300 hover:border-slate-400 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium transition">
+                Get Pro — $49/mo
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Why It Matters */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4">
-          <Card className="border-amber-200">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <ShieldCheck className="h-5 w-5 text-amber-500" />
-                Why Tip Compliance Matters
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-3">
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                  <div>
-                    <p className="font-medium text-slate-800">CA DLSE fines can reach $10,000 per violation</p>
-                    <p className="text-sm text-slate-600">Improper tip pools, tip credits, and missing records are the top citations during labor audits.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                  <div>
-                    <p className="font-medium text-slate-800">3-year record-keeping requirement</p>
-                    <p className="text-sm text-slate-600">California requires restaurants to retain tip records for 3 years. TipTrail auto-archives every calculation.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5" />
-                  <div>
-                    <p className="font-medium text-slate-800">IRS Form 8027 for large restaurants</p>
-                    <p className="text-sm text-slate-600">Restaurants with $500K+ annual gross must file 8027 annually. TipTrail generates your allocation summary.</p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="bg-white py-16" id="pricing">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900">Simple, Honest Pricing</h2>
-            <p className="text-slate-600 mt-2">No surprise fees. Cancel anytime.</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* Free Plan */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Free</CardTitle>
-                <CardDescription>Try it out risk-free</CardDescription>
-                <div className="text-3xl font-bold mt-4">$0<span className="text-lg font-normal text-slate-500">/mo</span></div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span>2 calculations/month</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span>Up to 5 employees</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span>Basic tip-out ratios</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span>PDF export (watermarked)</span>
-                  </li>
-                  <li className="flex items-center gap-2 text-slate-400">
-                    <span className="h-5 w-5">✗</span>
-                    <span>CA compliance checker</span>
-                  </li>
-                  <li className="flex items-center gap-2 text-slate-400">
-                    <span className="h-5 w-5">✗</span>
-                    <span>History logs</span>
-                  </li>
-                </ul>
-                <Link href="/calculate"><Button variant="outline" className="w-full mt-6">Get Started</Button></Link>
-              </CardContent>
-            </Card>
-
-            {/* Starter Plan */}
-            <Card className="border-amber-500 border-2">
-              <CardHeader>
-                <div className="flex justify-between items-start">
-                  <div>
-                    <CardTitle>Starter</CardTitle>
-                    <CardDescription>For growing restaurants</CardDescription>
-                  </div>
-                  <Badge className="bg-amber-500">Popular</Badge>
-                </div>
-                <div className="text-3xl font-bold mt-4">$19<span className="text-lg font-normal text-slate-500">/mo</span></div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span>5 calculations/month</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span>Up to 20 employees</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span>Custom tip-out ratios</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span>PDF export (no watermark)</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span>CA DLSE compliance checker</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span>3-month history</span>
-                  </li>
-                </ul>
-                <a href="/checkout?plan=starter" className="inline-flex items-center justify-center rounded-lg border border-transparent bg-amber-500 hover:bg-amber-600 text-white text-sm font-medium whitespace-nowrap transition-all h-8 gap-1.5 px-2.5 mt-6 w-full text-center">Subscribe — Starter</a>
-              </CardContent>
-            </Card>
-
-            {/* Pro Plan */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Pro</CardTitle>
-                <CardDescription>For multi-location owners</CardDescription>
-                <div className="text-3xl font-bold mt-4">$49<span className="text-lg font-normal text-slate-500">/mo</span></div>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span>Unlimited calculations</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span>Unlimited employees</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span>Unlimited locations</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span>Weekly email reports</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span>IRS Form 8027 generator</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="h-5 w-5 text-green-500" />
-                    <span>Priority support</span>
-                  </li>
-                </ul>
-                <a href="/checkout?plan=pro" className="inline-flex items-center justify-center rounded-lg border border-border bg-background hover:bg-muted text-sm font-medium whitespace-nowrap transition-all h-8 gap-1.5 px-2.5 mt-6 w-full text-center">Subscribe — Pro</a>
-              </CardContent>
-            </Card>
+      {/* Competitive */}
+      <section className="py-16 px-6 bg-slate-50">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold text-slate-900 text-center mb-8">vs. The Alternatives</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-slate-200">
+                  <th className="text-left py-3 px-4 text-slate-700 font-semibold">Tool</th>
+                  <th className="text-center py-3 px-4 text-slate-700 font-semibold">Price</th>
+                  <th className="text-center py-3 px-4 text-slate-700 font-semibold">Permit Focus</th>
+                  <th className="text-center py-3 px-4 text-slate-700 font-semibold">PDF Export</th>
+                  <th className="text-center py-3 px-4 text-slate-700 font-semibold">Best For</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-slate-100 bg-blue-50">
+                  <td className="py-3 px-4 font-semibold text-blue-700">PermitPilot AI</td>
+                  <td className="text-center py-3 px-4 text-green-700 font-medium">$19–49/mo</td>
+                  <td className="text-center py-3 px-4">✅ Core feature</td>
+                  <td className="text-center py-3 px-4">✅ Yes</td>
+                  <td className="text-center py-3 px-4">1-person shops</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 px-4 text-slate-600">Jobber</td>
+                  <td className="text-center py-3 px-4 text-slate-500">$149+/mo</td>
+                  <td className="text-center py-3 px-4 text-slate-400">❌ CRM focus</td>
+                  <td className="text-center py-3 px-4 text-slate-400">❌ No</td>
+                  <td className="text-center py-3 px-4 text-slate-500">Larger crews</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 px-4 text-slate-600">Housecall Pro</td>
+                  <td className="text-center py-3 px-4 text-slate-500">$199+/mo</td>
+                  <td className="text-center py-3 px-4 text-slate-400">❌ CRM focus</td>
+                  <td className="text-center py-3 px-4 text-slate-400">❌ No</td>
+                  <td className="text-center py-3 px-4 text-slate-500">Enterprise</td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-3 px-4 text-slate-600">permitplace.com</td>
+                  <td className="text-center py-3 px-4 text-slate-500">$200+/mo</td>
+                  <td className="text-center py-3 px-4">✅ Focused</td>
+                  <td className="text-center py-3 px-4 text-slate-400">❌ No</td>
+                  <td className="text-center py-3 px-4 text-slate-500">CO pros</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 text-slate-600">Google Search</td>
+                  <td className="text-center py-3 px-4 text-slate-500">Free</td>
+                  <td className="text-center py-3 px-4 text-slate-400">❌ Conflicting</td>
+                  <td className="text-center py-3 px-4 text-slate-400">❌ No</td>
+                  <td className="text-center py-3 px-4 text-slate-500">Anyone (unreliable)</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
 
-      {/* Competitive Note */}
-      <section className="py-12">
-        <div className="max-w-3xl mx-auto px-4 text-center">
-          <Card className="bg-slate-50 border-slate-200">
-            <CardContent className="py-6">
-              <p className="text-slate-700 text-sm">
-                <strong>vs. the competition:</strong> 7shifts starts at $150/mo. HotSchedules at $200/mo. TipTrail delivers purpose-built tip pooling and CA compliance at $19-49/mo — a fraction of the cost for independent owners.
-              </p>
-            </CardContent>
-          </Card>
+      {/* CTA */}
+      <section className="py-20 px-6 bg-blue-600">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-white mb-4">Stop Guessing. Start Permitting.</h2>
+          <p className="text-blue-100 text-lg mb-8">One avoided fine pays for a year of PermitPilot. Get started free in 60 seconds.</p>
+          <Link href="/lookup/" className="inline-block bg-white text-blue-700 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-50 transition">
+            Run Your First Permit Lookup
+          </Link>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center gap-2 mb-4 md:mb-0">
-              <Calculator className="h-6 w-6 text-amber-500" />
-              <span className="text-lg font-bold text-white">TipTrail AI</span>
-            </div>
-            <div className="flex items-center gap-2 text-sm">
-              <ShieldCheck className="h-4 w-4" />
-              <span>CA DLSE compliant tip pooling for independent restaurants</span>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-slate-800 text-center text-sm">
-            © 2026 TipTrail AI by Huadini. All rights reserved.
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
